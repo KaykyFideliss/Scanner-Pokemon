@@ -1,97 +1,113 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Scanner Pokémon - Aplicativo de Leitura de QRCode para Pokémon
 
-# Getting Started
+## 📱 Sobre o Projeto
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Aplicativo desenvolvido como teste técnico para vaga de Desenvolvedor Mobile na REMOPT. O app realiza a leitura de QR Codes contendo IDs de Pokémon, consulta a [PokeAPI](https://pokeapi.co/) e exibe as informações do Pokémon correspondente.
 
-## Step 1: Start Metro
+## 🚀 Funcionalidades
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **Tela Inicial**: Exibe nome do desenvolvedor e botão para iniciar scanner.
+- **Leitura de QR Code**: Utiliza a câmera do dispositivo para escanear QR Codes.
+- **Consulta à PokeAPI**: Busca informações detalhadas do Pokémon pelo ID escaneado.
+- **Exibição de Informações**: Mostra ID, nome, tipo(s) e imagem do Pokémon.
+- **Navegação**: Permite voltar à tela inicial após a consulta.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 🛠️ Tecnologias Utilizadas
 
-```sh
-# Using npm
-npm start
+- **React Native CLI** (0.72+)
+- **TypeScript**
+- **React Navigation** (navegação entre telas)
+- **React Native Vision Camera** (leitura de QR Code)
+- **Axios** (requisições HTTP)
+- **Context API** (gerenciamento de estado global)
 
-# OR using Yarn
-yarn start
+## 📋 Pré-requisitos
+
+- Node.js (16+)
+- Java JDK 11
+- Android Studio (para emulador Android)
+- Dispositivo Android físico ou emulador
+
+## 🔧 Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/KaykyFideliss/Scanner-Pokemon.git
+cd Scanner-Pokemon
+
+2. Instale as dependências:
+npm install
+# ou
+yarn install
+
+3.Para Android:
+npx react-native run-android
 ```
 
-## Step 2: Build and run your app
+### Dados extraídos da resposta
+- `id` → Identificador do Pokémon  
+- `name` → Nome do Pokémon  
+- `types` → Tipos (concatenados quando houver mais de um)  
+- `sprites.front_default` → URL da imagem frontal  
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
+## 📊 Estado Global
 
-```sh
-# Using npm
-npm run android
+Gerenciado com **Context API**, responsável por:
 
-# OR using Yarn
-yarn android
-```
+- Armazenar os dados do Pokémon atual
+- Manter o histórico de Pokémon consultados
+- Controlar estado de carregamento
+- Gerenciar erros da API
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 🧪 Testes com QR Codes
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+O aplicativo foi testado com os seguintes QR Codes:
 
-```sh
-bundle install
-```
+<img width="703" height="211" alt="image" src="https://github.com/user-attachments/assets/c139286f-f1c3-4912-b539-457a59efa299" />
 
-Then, and every time you update your native dependencies, run:
 
-```sh
-bundle exec pod install
-```
+---
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## ✅ Requisitos Cumpridos
 
-```sh
-# Using npm
-npm run ios
+- Desenvolvimento com **React Native CLI**
+- Uso de **TypeScript**
+- Três telas conforme protótipo
+- Leitura de QR Code funcional
+- Integração com **PokeAPI**
+- Exibição correta dos dados
+- Navegação entre telas
+- Estado global com **Context API**
+- Funcionamento em **Android**
 
-# OR using Yarn
-yarn ios
-```
+---
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🚨 Permissões Necessárias
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- 📷 **Câmera** — para leitura de QR Code  
+- 🌐 **Internet** — para consulta à API  
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
+## 📄 Licença
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Este projeto foi desenvolvido como **teste técnico para a REMOPT**.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+---
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 👤 Autor
 
-## Congratulations! :tada:
+**Kayky Fidelis**  
+Desenvolvedor Mobile  
+GitHub: [@KaykyFideliss](https://github.com/KaykyFideliss)                        
+Linkedin :[Kayky Fidelis](www.linkedin.com/in/kaykyfidelis)
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 📧 Contato
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Para dúvidas ou sugestões sobre o projeto, entre em contato através do repositório no GitHub.
